@@ -28,14 +28,14 @@ const App = () => {
     },
   ];
 
-  const addExpenseHandler = (expenses) => {
+  const addExpenseHandler = (expense) => {
     console.log('In App.js test');
-    console.log(expenses)
+    console.log(expense)
   };
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );
