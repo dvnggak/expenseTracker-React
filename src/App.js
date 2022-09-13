@@ -28,6 +28,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expenses) => {
+    console.log('In App.js test');
+    console.log(expenses)
+  };
+
   return (
     <div>
       <NewExpense />
