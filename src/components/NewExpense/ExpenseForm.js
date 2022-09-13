@@ -3,40 +3,73 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-// WORKING WITH INDEPENDENCES STATE
-  // const [enteredTitle, setEnteredTitle] = useState('');
-  // const [enteredAmount, setEnteredAmount] = useState('');
-  // const [enteredDate, setEnteredDate] = useState('');
+// WORKING WITH MULTIPLE STATE APPROACHES
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
-// WORKING WITH ONE STATE OBJECT
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: '',
-  });
+// WORKING WITH ONE STATE OBJECT APPROACHES
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: '',
+  // });
 
   const titleChangeHandler = (event) => {
-    // setEnteredTitle(event.target.value)
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
-    });
+    // Multiple set update
+    setEnteredTitle(event.target.value)
+
+    // One state update === INCORRECT WAYS BUT FINE
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+
+    // One state update === CORRECT WAYS
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredTitle: event.target.value,
+    //   };
+    // });
   };
 
   const amountChangeHandler = (event) => {
-    // setEnteredAmount(event.target.value)
-    setUserInput({
-      ...userInput,
-      enteredAmount: event.target.value,
-    });
+    // Multiple set update
+    setEnteredAmount(event.target.value)
+
+    // One state update === INCORRECT WAYS BUT FINE
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
+
+    // One state update === CORRECT WAYS
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredAmount: event.target.value,
+    //   };
+    // });
   };
 
   const dateChangeHandler = (event) => {
-    // setEnteredDate(event.target.value)
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value,
-    });
+    // Multiple set update
+    setEnteredDate(event.target.value)
+
+    // One state update === INCORRECT WAYS BUT FINE
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
+
+    // One state update === CORRECT WAYS
+    // setUserInput((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     enteredDate: event.target.value,
+    //   };
+    // });
   };
 
   return (
